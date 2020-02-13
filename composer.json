@@ -1,0 +1,23 @@
+{
+  "name": "miloszowi/fresh-sales",
+  "description": "Communicates with freshsales api",
+  "require": {
+    "php": "^7.1"
+  },
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Miłosz Guglas",
+      "email": "miloszweb@gmail.com"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Miloszowi\\FreshSales\\": ""
+    }
+  }
+}

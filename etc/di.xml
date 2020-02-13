@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright (c) Miłosz Guglas <https://github.com/miloszowi>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Miloszowi\FreshSales\Model\Logger\Debug" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/freshsales.log</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Miloszowi\FreshSales\Model\Logger\Base" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">Miloszowi\FreshSales\Model\Logger\Debug</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Miloszowi\FreshSales\Model\Logger">
+        <arguments>
+            <argument name="logger" xsi:type="object">Miloszowi\FreshSales\Model\Logger\Base</argument>
+        </arguments>
+    </type>
+</config>

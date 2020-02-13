@@ -1,0 +1,29 @@
+<?php
+/**
+ * @copyright Copyright (c) Miłosz Guglas <https://github.com/miloszowi>
+ */
+
+/** @var \Miloszowi\FreshSales\ViewModel\Adminhtml\AccountDetails $viewModel */
+$viewModel = $block->getViewModel();
+$freshSalesAccount = $viewModel->getAccountDetails($block->getCustomerId());
+?>
+<?php if ($freshSalesAccount): ?>
+    <div class="row">
+        <span class="label">Id: </span>
+        <?= $freshSalesAccount['id'] ?>
+    </div>
+    <div class="row">
+        <span class="label">Name: </span>
+        <?= $freshSalesAccount['name'] ?>
+    </div>
+<!-- Display anything you want to display from freshsales account information -->
+<?php else: ?>
+    <div class="row">
+        <h3>
+            <?= __('Customer not connected to FreshSales') ?>
+        </h3>
+    </div>
+<?php endif; ?>
+
+
+

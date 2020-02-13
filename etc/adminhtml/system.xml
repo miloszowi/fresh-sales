@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright (c) Miłosz Guglas <https://github.com/miloszowi>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="miloszowi_freshsales_api" translate="label" type="text" sortOrder="450" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Fresh Sales</label>
+            <tab>customer</tab>
+            <resource>Miloszowi_FreshSales::freshsales_api_configuration</resource>
+            <group id="general" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>FreshSales API Configuration</label>
+                <field id="hostname" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hostname</label>
+                    <comment>This is hostname of freshsales api. FE: user.freshsales.io</comment>
+                </field>
+                <field id="api_key" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>API Key</label>
+                    <comment>Your API Key you can find under /personal-settings/api-settings</comment>
+                </field>
+                <field id="logging" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Logging</label>
+                    <comment>Enable/Disable logging for each request to Fresh Sales</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
